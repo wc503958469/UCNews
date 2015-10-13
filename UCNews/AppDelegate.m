@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "UCViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //创建主窗口
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //将第一个页面加入根控制器
+    self.window.rootViewController = [[UCViewController alloc]init];
+    
+    //显示到界面上
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

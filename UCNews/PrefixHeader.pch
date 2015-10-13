@@ -1,0 +1,32 @@
+//
+//  PrefixHeader.pch
+//  test
+//
+//  Created by wangchen on 15/6/16.
+//  Copyright (c) 2015年 heiguang. All rights reserved.
+//
+
+#ifndef test_PrefixHeader_pch
+#define test_PrefixHeader_pch
+
+
+#import <UIKit/UIKit.h>
+#import "UIColor+PublicTool.h"
+
+//有转屏情况下再用这个，这个可以适配ios7/iphone4
+#define SCREENHEIGHT [PublicTool getScreenHeight]
+#define SCREENWIDTH [PublicTool getScreenWidth]
+
+//屏幕宽高
+#define ScreenWidth [[UIScreen mainScreen] bounds].size.width
+#define ScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+// 获得RGB颜色
+#define ColorWithRGB(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+//输出三种不好输出的东西
+#define NSLogRect(rect) NSLog(@"%s x:%.4f, y:%.4f, w:%.4f, h:%.4f", #rect, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height)
+#define NSLogSize(size) NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
+#define NSLogPoint(point) NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
+
+#endif
